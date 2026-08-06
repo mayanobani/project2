@@ -11,8 +11,8 @@ RUN pip install --no-cache-dir -r Expense_Tracker/backend/requirements.txt gunic
 COPY backend backend
 
 
-COPY  project2/frontend/templates project2/backend/templates
-COPY  project2/frontend/static  project2/backend/static
+COPY  frontend/templates backend/templates
+COPY  frontend/static    backend/static
 
 ENV PYTHONPATH=/app \
     PYTHONUNBUFFERED=1 \
