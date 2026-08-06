@@ -1,6 +1,6 @@
 FROM python:3.12-slim
 WORKDIR /app
-COPY Expense_Tracker/backend/requirements.txt .
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 RUN cp -r Expense_Tracker/frontend/templates Expense_Tracker/backend/templates
