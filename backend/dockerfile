@@ -3,16 +3,12 @@ FROM python:3.11-slim
 WORKDIR /app
 
 
-COPY backend/requirements.txt Expense_Tracker/backend/requirements.txt
-RUN pip install --no-cache-dir -r Expense_Tracker/backend/requirements.txt gunicorn python-dotenv
+COPY backend/requirements.txt backend/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt gunicorn python-dotenv
 
 
 
-COPY backend backend
-
-
-COPY  frontend/templates backend/templates
-COPY  frontend/static    backend/static
+COPY . .
 
 ENV PYTHONPATH=/app \
     PYTHONUNBUFFERED=1 \
